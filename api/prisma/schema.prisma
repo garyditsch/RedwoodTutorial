@@ -1,7 +1,5 @@
 datasource DS {
-  // optionally set multiple providers
-  // example: provider = ["sqlite", "postgresql"]
-  provider = "sqlite"
+  provider = ["sqlite", "postgresql"]
   url      = env("DATABASE_URL")
 }
 
@@ -9,6 +7,7 @@ generator client {
   provider      = "prisma-client-js"
   binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
+
 
 model Post {
   id        Int      @id @default(autoincrement())
